@@ -5,9 +5,11 @@ description: ""
 ---
 {% include JB/setup %}
 
-scala.Any is the Scala root class and is similar to java.lang.Object
-
+scala.Any is the Scala root class.
+ 
 scala.Any has two subclasses AnyVal and AnyRef. Most scala classes are subclasses of these.  
+
+AnyRef is similar to java.lang.Object - it is the parent of all reference objects.
 
 Int, Long, Float, Double, Short, Char, Byte Boolean are subclasses of AnyVal. At runtime, their values are represented as Java primitives. You can't new these up. 
 
@@ -46,3 +48,16 @@ scala.Nothing is
 - a subtype of every other Scala type
 - has no instances
 - used as a return type for methods with abnormal termination, e.g methods that throw exceptions 
+    def throwException() = Nothing { throw new RuntimeException() }
+
+scala.Null is
+- the null reference
+- a subtype of every AnyRef class
+- you can't assign Null to a value type. 
+
+```
+    scala> val i:Byte = null
+    <console>:7: error: type mismatch;
+    found   : Null(null)
+    required: Byte
+```
