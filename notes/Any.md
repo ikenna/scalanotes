@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Any"
+title: "Any and Scala's Type Hierarchy"
 description: ""
 ---
 {% include JB/setup %}
@@ -43,6 +43,7 @@ String is a subclass of AnyRef.
 
 Unit is similar to Java's void
 
+scala.Nothing and scala.Null are known as the Scala Bottom Types
 
 scala.Nothing is 
 - a subtype of every other Scala type
@@ -55,9 +56,11 @@ scala.Null is
 - a subtype of every AnyRef class
 - you can't assign Null to a value type. 
 
-```
+Example
+
     scala> val i:Byte = null
     <console>:7: error: type mismatch;
     found   : Null(null)
     required: Byte
-```
+
+
