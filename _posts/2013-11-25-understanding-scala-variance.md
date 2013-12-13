@@ -16,37 +16,38 @@ To understand Variance in Scala, lets first review the concepts of Type and poly
 
 
 # Type
-A Type helps us enforce levels of abstraction (Reynolds 1983). 
 
-Polymorphisim literally translated from the greek, means having many forms. 
+#Type
+Types help us categorize objects according to their usage and behaviour [2]. Types help us enforce constraints on how objects interact with other objects, to prevent invalid or inconsistent interactions from occuring.  
 
-Polymorphic languages are in contrast to monomorphic languages - languages in which values and variables have only one type (for example C and Pascal). 
- 
-- Types help us categorize objects according to their usage and behaviour [2].We can think of types as sets of objects with uniform behaviour. Types help us enforce constraints on how objects interact with other objects, to prevent invalid or inconsistent interactions from occuring.  
+#Static Typing
+A programming language is statically typed, if at compile time, all variables and values are bound to a type at a compile time. Static typing means that type inconsistencies can be discovered at compile time. [1] . 
 
-A programming language is statically typed, if at compile time, all variables and values are bound to a type at a compile time. Static typing means that type inconsistencies can be discovered at compile time - if a program compiles, it is type-consistent [1] . 
+#Polymorphisim
+Polymorphisim literally translated from the greek, means having many forms.
 
-- Polymorphisim 'is the provision of a single interface to entities of different types'. A programming language is said to be monophormic if every variable and value can be of only one type.  A language is polymorphic when values and variables can be of more than one tpe. On a more detailed level, a function is polymorhic if its parameter can have more than one type [1]. A value is polymorphic if it can have more than one type [3].  
+=> Polymorphic language: A language is polymorphic when values and variables can be of more than one tpe. A programming language is said to be monophormic if every variable and value can be of only one type (for example C and Pascal).  
 
-There are 2 major kinds of polymorphisim : 
+=> Polymorphic function
+ On a more detailed level, a function is polymorhic if its parameter can have more than one type [1]
 
-Universal Polymorphisim: Universal polymorphic functions will work on all kind of types that exhibit a common structure.  
+Kinds of polymorphisim
 
-Adhoc PolyMorphisim:
-Functions that work on a finite set of different or unrelated types (Luca 1985)
-Will execute different code for each type of arguement it gets. This is aparent polymorphisim.
+=> Universal Polymorphisim: This is true polymorphisim: universal polymorphic functions will work on all kind of types that exhibit a common structure. The same code is executed for arguements of an infinite range of types. 
 
-Universal PolyMorphisim: Will execute the same code for arguements of an infinite range of types. 
+There are 2 kinds of Universal Plymorphisim : 
+
+=> Parametric Polymorphisim: functions work consistently on a range of types (as specified by the type parameter), which have all have a common structure. The function takes a type parameter.
 
 
-- Parametric Polymorphisim
- a function works consistently on a range of types (as specified by the type parameter), which have all have a common structure. The function takes a type parameter.
+=> Adhoc PolyMorphisim: This is aparent polymorphisim: adhoc polymorphic functions work on a finite set of different or unrelated types (Luca 1985). The will execute different code for each type of arguement it gets. 
 
  - Inclusion polymorphisim
 An object is thought of as belonging to many different classes. 
 
 - Overloading 
- Same variable name is used to denote different functions. 
+- One function name is associated with many function definitions. For example 
+    
 
 - Coercion 
 An arguement is converted to the type expected by a funtion to prevent a type error. 
